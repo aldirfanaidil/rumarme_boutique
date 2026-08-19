@@ -4,8 +4,6 @@ import {
   MapPin,
   Instagram,
   Phone,
-  Shirt,
-  Sparkles,
   ExternalLink,
 } from "lucide-react";
 
@@ -14,6 +12,32 @@ import armiaprLogoAsset from "../assets/armiapr-logo.png.asset.json";
 
 const rumarmeLogo = rumarmeLogoAsset?.url || "/rumarme-logo.png";
 const armiaprLogo = armiaprLogoAsset?.url || "/armiapr-logo.png";
+
+function TiktokIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .56.04.82.1v-3.6a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.5a6.34 6.34 0 0 0 10.83 4.47V10.45a8.3 8.3 0 0 0 5.61 2.16v-3.6a4.85 4.85 0 0 1-2-.32z" />
+    </svg>
+  );
+}
+
+function FacebookIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.69c0-2.47 1.47-3.83 3.72-3.83 1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.76-1.61 1.54V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z" />
+    </svg>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,28 +72,28 @@ const links: LinkItem[] = [
     label: "Lihat Koleksi Baju Bodo",
     caption: "@rumarme.smd",
     href: "https://www.instagram.com/rumarme.smd?igsh=Z3plcGk3eGV3Z242",
-    icon: <Shirt className="h-5 w-5" />,
+    icon: <Instagram className="h-5 w-5" />,
     variant: "secondary",
   },
   {
     label: "Booking MUA",
     caption: "@armiapr.makeup",
     href: "https://www.instagram.com/armiapr.makeup?igsh=MTB6cnVhMTF2anRtNw==",
-    icon: <Sparkles className="h-5 w-5" />,
+    icon: <Instagram className="h-5 w-5" />,
     variant: "secondary",
   },
   {
     label: "TikTok MUA",
     caption: "@armiapr.makeup",
     href: "https://www.tiktok.com/@armiapr.makeup?_r=1&_t=ZS-98zc8LKFhk9",
-    icon: <ExternalLink className="h-5 w-5" />,
+    icon: <TiktokIcon className="h-5 w-5" />,
     variant: "outline",
   },
   {
     label: "Facebook Rumarme",
     caption: "Rumarme Boutique",
     href: "https://www.facebook.com/share/1Be68ZzqwV/?mibextid=wwXIfr",
-    icon: <ExternalLink className="h-5 w-5" />,
+    icon: <FacebookIcon className="h-5 w-5" />,
     variant: "outline",
   },
   {
@@ -93,9 +117,9 @@ const socialLinks = [
     icon: <Instagram className="h-5 w-5" />,
   },
   {
-    label: "Instagram MUA",
-    href: "https://www.instagram.com/armiapr.makeup?igsh=MTB6cnVhMTF2anRtNw==",
-    icon: <Instagram className="h-5 w-5" />,
+    label: "TikTok MUA",
+    href: "https://www.tiktok.com/@armiapr.makeup?_r=1&_t=ZS-98zc8LKFhk9",
+    icon: <TiktokIcon className="h-5 w-5" />,
   },
 ];
 
@@ -145,21 +169,17 @@ function Index() {
 
       <div className="relative z-10 w-full max-w-md">
         {/* Unified brand logos */}
-        <div className="mb-8 flex items-center justify-center gap-4">
-          <div className="flex h-20 w-32 items-center justify-center rounded-2xl bg-white/60 p-3 shadow-sm backdrop-blur-sm">
-            <img
-              src={rumarmeLogo}
-              alt="Rumarme Boutique"
-              className="max-h-full max-w-full object-contain"
-            />
-          </div>
-          <div className="flex h-20 w-32 items-center justify-center rounded-2xl bg-white/60 p-3 shadow-sm backdrop-blur-sm">
-            <img
-              src={armiaprLogo}
-              alt="Armiapr Makeup"
-              className="max-h-full max-w-full object-contain"
-            />
-          </div>
+        <div className="mb-8 flex items-center justify-center gap-6">
+          <img
+            src={rumarmeLogo}
+            alt="Rumarme Boutique"
+            className="h-20 w-auto object-contain"
+          />
+          <img
+            src={armiaprLogo}
+            alt="Armiapr Makeup"
+            className="h-20 w-auto object-contain"
+          />
         </div>
 
         {/* Identity */}
@@ -207,3 +227,4 @@ function Index() {
     </main>
   );
 }
+
