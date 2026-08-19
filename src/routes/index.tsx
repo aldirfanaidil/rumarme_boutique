@@ -9,8 +9,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-import rumarmeLogo from "../assets/rumarme-logo.png.asset.json";
-import armiaprLogo from "../assets/armiapr-logo.png.asset.json";
+import rumarmeLogo from "../assets/image/rumarme-logo.png";
+import armiaprLogo from "../assets/image/armiapr-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -145,14 +145,14 @@ function Index() {
         <div className="mb-8 flex items-center justify-center gap-4">
           <div className="flex h-20 w-32 items-center justify-center rounded-2xl bg-white/60 p-3 shadow-sm backdrop-blur-sm">
             <img
-              src={rumarmeLogo.url}
+              src={rumarmeLogo}
               alt="Rumarme Boutique"
               className="max-h-full max-w-full object-contain"
             />
           </div>
           <div className="flex h-20 w-32 items-center justify-center rounded-2xl bg-white/60 p-3 shadow-sm backdrop-blur-sm">
             <img
-              src={armiaprLogo.url}
+              src={armiaprLogo}
               alt="Armiapr Makeup"
               className="max-h-full max-w-full object-contain"
             />
