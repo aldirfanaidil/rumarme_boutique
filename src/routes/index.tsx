@@ -169,16 +169,16 @@ function Index() {
 
       <div className="relative z-10 w-full max-w-md">
         {/* Unified brand logos */}
-        <div className="mb-8 flex items-center justify-center gap-6">
+        <div className="mb-6 flex items-center justify-center gap-3">
           <img
             src={rumarmeLogo}
             alt="Rumarme Boutique"
-            className="h-20 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
           <img
             src={armiaprLogo}
             alt="Armiapr Makeup"
-            className="h-20 w-auto object-contain"
+            className="h-11 w-auto object-contain"
           />
         </div>
 
