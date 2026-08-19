@@ -9,8 +9,11 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-import rumarmeLogo from "../assets/image/rumarme-logo.png";
-import armiaprLogo from "../assets/image/armiapr-logo.png";
+import rumarmeLogoAsset from "../assets/rumarme-logo.png.asset.json";
+import armiaprLogoAsset from "../assets/armiapr-logo.png.asset.json";
+
+const rumarmeLogo = rumarmeLogoAsset?.url || "/rumarme-logo.png";
+const armiaprLogo = armiaprLogoAsset?.url || "/armiapr-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
